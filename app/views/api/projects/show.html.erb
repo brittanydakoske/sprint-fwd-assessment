@@ -1,0 +1,21 @@
+<div>
+  <p>
+    <span style="font-weight: bolder;">Id</span>
+    <span><%= @project.id %></span>
+  </p>
+  <p>
+    <span style="font-weight: bolder;">Name</span>
+    <span><%= @project.name %></span>
+  </p>
+  <p>
+    <span style="font-weight: bolder;">Members</span>
+    <% if @project.members.empty? %>
+      <span>None</span>
+    <% else %>
+      <% @project.members.each do |member| %>
+        <span><%= member.first_name + member.last_name %></span>
+      <% end %>
+    <% end %>
+  </p>
+  <%= link_to 'Back', api_projects_path %>
+</div>

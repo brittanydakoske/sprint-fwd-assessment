@@ -1,0 +1,36 @@
+<div>
+  <h3>Projects</h3>
+  <table class="teams" style="width: 100%">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @projects.each do |project| %>
+      <tr class="team">
+        <td><%= project.id %></td>
+        <td><%= project.name %></td>
+        <td>
+          <%= link_to 'Details', api_project_path(project) %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_api_project_path(project) %>
+        </td>
+        <td>
+          <%= button_to 'Delete', api_project_path(project), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <hr />
+  <%= link_to "New Project", new_api_project_path %>
+</div>
+
+<style>
+    td,
+    th {
+        text-align: left;
+    }
+</style>

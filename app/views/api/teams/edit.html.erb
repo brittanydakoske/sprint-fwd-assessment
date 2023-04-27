@@ -1,0 +1,4 @@
+<%= form_with model: @team, url: api_team_path(@team), method: "patch" do |form| %>
+  <%= form.text_field :name, required: true %>
+  <%= form.submit %>
+<% end %>

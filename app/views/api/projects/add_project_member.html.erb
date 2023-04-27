@@ -1,0 +1,6 @@
+<% @available_members.each do |member| %>
+  <div>
+    <%= member.first_name + ' ' + member.last_name %>
+    <%= button_to 'Add', api_project_member_create_project_member_path(@project, member) %>
+  </div>
+<% end %>

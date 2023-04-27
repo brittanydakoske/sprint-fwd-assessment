@@ -1,0 +1,8 @@
+<%= form_with model: @member, url: api_member_path(@member), method: "patch" do |form| %>
+  <%= form.text_field :first_name, placeholder: 'First name', required: true %>
+  <%= form.text_field :last_name, placeholder: 'Last name', required: true %>
+  <%= form.text_field :city, placeholder: 'City' %>
+  <%= form.text_field :state, placeholder: 'State' %>
+  <%= form.text_field :country, placeholder: 'Country' %>
+  <%= form.submit %>
+<% end %>

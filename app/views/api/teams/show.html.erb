@@ -1,0 +1,21 @@
+<div>
+  <p>
+    <span style="font-weight: bolder;">Id</span>
+    <span><%= @team.id %></span>
+  </p>
+  <p>
+    <span style="font-weight: bolder;">Name</span>
+    <span><%= @team.name %></span>
+  </p>
+  <p>
+    <span style="font-weight: bolder;">Members</span>
+    <% if @team.members.empty? %>
+      <span>None</span>
+    <% else %>
+      <% @team.members.each do |member| %>
+        <span><%= member.first_name + ' ' + member.last_name %>, </span>
+      <% end %>
+    <% end %>
+  </p>
+  <%= link_to 'Back', api_teams_path %>
+</div>

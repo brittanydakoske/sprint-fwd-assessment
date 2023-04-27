@@ -1,0 +1,12 @@
+<%= form_with model: @project, url: api_project_path(@project), method: "patch" do |form| %>
+  <%= form.text_field :name, required: true %>
+  <%= form.submit %>
+<% end %>
+
+<div style="margin-top: 15px;"><span style="font-weight: bolder">Members</span></div>
+<% @project.members.each do |member| %>
+  <div>
+    <%= member.first_name + ' ' + member.last_name %>
+  </div>
+<% end %>
+<%= link_to 'Add Project Members', api_project_members_add_project_member_path(@project), method: :post %>

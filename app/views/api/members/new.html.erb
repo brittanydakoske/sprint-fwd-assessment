@@ -1,0 +1,9 @@
+<%= form_with model: @member, url: api_members_path, method: "post" do |form| %>
+  <%= form.select :team_id, Team.all.collect {|p| [ p.name, p.id ] }, { include_blank: "Select Team" }, required: true %>
+  <%= form.text_field :first_name, placeholder: 'First name', required: true %>
+  <%= form.text_field :last_name, placeholder: 'Last name', required: true %>
+  <%= form.text_field :city, placeholder: 'City' %>
+  <%= form.text_field :state, placeholder: 'State' %>
+  <%= form.text_field :country, placeholder: 'Country' %>
+  <%= form.submit %>
+<% end %>
